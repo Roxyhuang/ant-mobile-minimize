@@ -1,0 +1,11 @@
+{
+  "env": "stage",
+  "publicPath": "//oms-cloud.99bill.com/stage2/html/website/merchant/2.0",
+  "host": "localhost",
+  "port": "8080",
+  "fetchConfig": {
+    "isMock": false,
+    "fetchUrl": "//mbp.99bill.com"
+  },
+  "debug": true
+}
