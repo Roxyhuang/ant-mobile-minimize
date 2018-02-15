@@ -19,7 +19,6 @@ if (process.env.NODE_ENV === 'development') {
 
 const theme = require('../../package.json').theme;
 const APP_ENTRY_POINT = config.get('appEntry');
-const ANALYZER_BUNDLE = config.get('analyzerBundle');
 const IS_DEBUG = config.get('debug') || false;
 const BUNDLE_LIST = config.get('bundleConfig') || [];
 const TEMPLATE_PAGE = config.get('templatePage') || 'public/index.html';
@@ -161,26 +160,6 @@ Object.keys(APP_ENTRY_POINT).forEach((name,index)=> {
     }),
   );
 });
-
-
-if (ANALYZER_BUNDLE) {
-  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-  webpackConfig.plugins.push(
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'server',
-      analyzerHost: '127.0.0.1',
-      analyzerPort: 8888,
-      reportFilename: 'report.html',
-      defaultSizes: 'parsed',
-      openAnalyzer: true,
-      generateStatsFile: false,
-      statsFilename: 'stats.json',
-      statsOptions: null,
-      logLevel: 'info'
-    })
-  )
-}
-
 
 webpackConfig.devtool = 'cheap-module-eval-source-map';
 

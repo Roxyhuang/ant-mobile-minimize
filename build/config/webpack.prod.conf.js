@@ -71,6 +71,7 @@ webpackConfig.plugins.push(
 );
 
 if (IS_UGLIFYJS) {
+  console.log(config.get('env') === 'production');
   webpackConfig.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,

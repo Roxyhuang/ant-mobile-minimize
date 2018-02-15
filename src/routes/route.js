@@ -14,7 +14,7 @@ const history = createBrowserHistory();
 
 // import { syncHistoryWithStore } from 'react-router-redux';
 // import { useScroll } from 'react-router-scroll';
-// import store from '../core/store';
+// import store from '../store/store';
 // const history = syncHistoryWithStore(browserHistory, store);
 
 const ListA = asyncComponent(() => import('../components/containers/list/ListA'));

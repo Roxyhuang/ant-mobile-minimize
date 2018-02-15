@@ -15,6 +15,7 @@ class ListA extends React.Component {
   componentDidMount() {
     // TODO
     test._test();
+    console.log('console.log')
     // backend.getInstance().getProductList({ method: 'POST' }).then((res) => {
     //   console.log(res);
     // });
