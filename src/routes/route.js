@@ -3,10 +3,10 @@ import {
   Router,
   Route,
   Redirect,
-  // Link,
 } from 'react-router-dom';
 import { spring, AnimatedSwitch } from 'react-router-transition';
 import createBrowserHistory from 'history/createBrowserHistory';
+import { ConnectedRouter } from 'react-router-redux';
 import { asyncComponent } from '../utils/asyncComponent';
 import Layout from '../components/containers/layout/Layout';
 
@@ -51,24 +51,26 @@ const bounceTransition = {
 };
 
 const routes = (
-  <Router history={history} key={Math.random()}>
-    <Layout history={history}>
-      <AnimatedSwitch
-        atEnter={bounceTransition.atEnter}
-        atLeave={bounceTransition.atLeave}
-        atActive={bounceTransition.atActive}
-        mapStyles={mapStyles}
-        className="switch-wrapper"
-      >
-        <Redirect exact from={'/' || '/index.html'} to="/list-a" />
-        <Route path="/list-a" component={ListA} />
-        <Route path="/list-b" component={ListB} />
-        <Route path="/list-c" component={ListC} />
-        <Redirect exact from="/index.html" to="/list-a" />
-        <Route component={noMatch} />
-      </AnimatedSwitch>
-    </Layout>
-  </Router>
+  <ConnectedRouter history={history} key={Math.random()}>
+    <Router history={history} key={Math.random()}>
+      <Layout history={history}>
+        <AnimatedSwitch
+          atEnter={bounceTransition.atEnter}
+          atLeave={bounceTransition.atLeave}
+          atActive={bounceTransition.atActive}
+          mapStyles={mapStyles}
+          className="switch-wrapper"
+        >
+          <Redirect exact from={'/' || '/index.html'} to="/list-a" />
+          <Route path="/list-a" component={ListA} />
+          <Route path="/list-b" component={ListB} />
+          <Route path="/list-c" component={ListC} />
+          <Redirect exact from="/index.html" to="/list-a" />
+          <Route component={noMatch} />
+        </AnimatedSwitch>
+      </Layout>
+    </Router>
+  </ConnectedRouter>
 );
 
 export default routes;
