@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import 'assets/css/global.less';
 import { Provider } from 'react-redux';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
-import { LocaleProvider } from 'antd';
+import zhCN from 'antd-mobile/lib/locale-provider/';
+import { LocaleProvider } from 'antd-mobile';
 // import store from './store/store';
 import routers from '../../routes/route';
 
