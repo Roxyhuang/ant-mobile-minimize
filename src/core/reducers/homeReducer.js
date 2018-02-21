@@ -1,11 +1,8 @@
 import * as types from '../actions/actionTypes';
+import initialState from '../states/homeInitialState';
 
 
-const initialState = {
-  number: 1,
-};
-
-export default function counter(state = initialState, action) {
+export default function homeReducer(state = initialState, action) {
   switch (action.type) {
     case types.INCREMENT:
       return state.number + 1;
@@ -15,5 +12,3 @@ export default function counter(state = initialState, action) {
       return state;
   }
 }
-
-
