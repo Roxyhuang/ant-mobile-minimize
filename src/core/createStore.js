@@ -3,7 +3,7 @@ import createHashHistory from 'history/createHashHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 
-import rootSaga from './rootSaga';
+import rootSaga from './effects/';
 
 export const history = createHashHistory();
 const routeMiddleware = routerMiddleware(history);

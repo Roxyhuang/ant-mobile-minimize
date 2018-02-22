@@ -1,4 +1,4 @@
-import { take, put, call, fork, select } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga';
 import { INCREMENT, INCREMENT_ASYNC } from '../../core/actions/actionTypes';
 // import { Actions } from 'react-native-router-flux';
