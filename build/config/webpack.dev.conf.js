@@ -5,7 +5,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import OpenBrowserPlugin from 'open-browser-webpack-plugin';
-import AutoDllPlugin from 'autodll-webpack-plugin';
+// import AutoDllPlugin from 'autodll-webpack-plugin';
 
 import webpackConfig from './webpack.base.conf';
 
@@ -74,14 +74,14 @@ webpackConfig.plugins.push(
       syntax: 'less'
     }
   ),
-  new AutoDllPlugin({
-    inject: true,
-    filename: '[name].dll.js',
-    path: './assets/js',
-    entry: {
-      vendor: vendorList
-    }
-  }),
+  // new AutoDllPlugin({
+  //   inject: true,
+  //   filename: '[name].dll.js',
+  //   path: './assets/js',
+  //   entry: {
+  //     vendor: vendorList
+  //   }
+  // }),
 );
 
 webpackConfig.module.rules = webpackConfig.module.rules.concat(
