@@ -1,6 +1,25 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
+import { Button } from 'antd-mobile';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as homeActions from '../../../core/actions/homeActions';
 import s from './list.less';
+
+
+const mapStateToProps = (state) => {
+  const { home } = state.state;
+  return {
+    state: {
+      home,
+    },
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(
+    { ...homeActions }, dispatch),
+});
 
 class ListB extends React.Component {
   constructor(props) {
@@ -11,17 +30,21 @@ class ListB extends React.Component {
   }
 
   componentDidMount() {
-    // TODO
+    console.log(this.props.actions);
   }
 
   render() {
     return (
       <div>
         <div className={s.listB}>B</div>
+        <div>{this.props.state.home.number}</div>
+        <Button onClick={this.props.actions.increment}>+1</Button>
+        <Button onClick={this.props.actions.decrement}>-1</Button>
+        <Button onClick={this.props.actions.incrementAsync}>异步+1</Button>
       </div>
 
     );
   }
 }
 
-export default CSSModules(ListB, s);
+export default connect(mapStateToProps, mapDispatchToProps)(ListB);
