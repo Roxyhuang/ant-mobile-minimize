@@ -1,9 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga';
 import { INCREMENT, INCREMENT_ASYNC } from '../../core/actions/actionTypes';
-// import { Actions } from 'react-native-router-flux';
-// import { LOAD } from 'redux-storage';
-// import { getUser } from '../reducers/selectors';
 
 export const delay1 = ms => new Promise((resolve, reject) => {
   if (ms === 3000) {
