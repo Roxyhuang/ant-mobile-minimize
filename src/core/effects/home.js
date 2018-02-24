@@ -1,4 +1,4 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, select } from 'redux-saga/effects';
 import { takeEvery } from 'redux-saga';
 import { INCREMENT, INCREMENT_ASYNC } from '../../core/actions/actionTypes';
 
@@ -10,17 +10,10 @@ export const delay1 = ms => new Promise((resolve, reject) => {
   }
 });
 
-export const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
 function* incrementAsync() {
-  // while(true) {
-  try {
-    yield call(delay, 1000);
-    yield put({ type: INCREMENT });
-  } catch (e) {
-    console.log(e);
-  }
-  // }
+  yield put({ type: INCREMENT });
+  const number = yield select(state => state.state.home.number);
+  yield call(() => console.log(number));
 }
 
 // Bootstrap Functions App

@@ -3,7 +3,6 @@ import initialState from '../states/homeInitialState';
 
 
 export default function homeReducer(state = initialState, action) {
-  console.log(state);
   switch (action.type) {
     case types.INCREMENT:
       return {

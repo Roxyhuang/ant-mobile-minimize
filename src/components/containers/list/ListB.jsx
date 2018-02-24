@@ -33,6 +33,11 @@ class ListB extends React.Component {
     console.log(this.props.actions);
   }
 
+  test() {
+    console.log(this);
+    this.props.actions.incrementAsync();
+  }
+
   render() {
     return (
       <div>
@@ -40,7 +45,13 @@ class ListB extends React.Component {
         <div>{this.props.state.home.number}</div>
         <Button onClick={this.props.actions.increment}>+1</Button>
         <Button onClick={this.props.actions.decrement}>-1</Button>
-        <Button onClick={this.props.actions.incrementAsync}>异步+1</Button>
+        <Button
+          onClick={
+            () => this.test()
+          }
+        >
+          异步+1
+        </Button>
       </div>
 
     );

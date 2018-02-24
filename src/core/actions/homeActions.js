@@ -17,3 +17,4 @@ export function incrementAsync() {
     type: types.INCREMENT_ASYNC,
   };
 }
+
