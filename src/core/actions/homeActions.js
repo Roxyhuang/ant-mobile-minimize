@@ -18,3 +18,8 @@ export function incrementAsync() {
   };
 }
 
+export function decrementAsync() {
+  return {
+    type: types.DECREMENT_ASYNC,
+  };
+}
