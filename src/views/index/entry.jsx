@@ -6,6 +6,12 @@ import { LocaleProvider } from 'antd-mobile';
 import createStore from '../../core/createStore';
 import routers from '../../routes/route';
 
+if (process.env.NODE_ENV === 'development' && process.env.DEBUG) {
+  const eruda = require('eruda');
+  // open debug mode
+  eruda.init();
+}
+
 const store = createStore();
 
 const MOUNT_NODE = document.getElementById('root');
