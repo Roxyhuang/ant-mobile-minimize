@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   Router,
@@ -5,12 +6,12 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { spring, AnimatedSwitch } from 'react-router-transition';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHashHistory from 'history/createHashHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import { asyncComponent } from '../utils/asyncComponent';
 import Layout from '../components/containers/layout/Layout';
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 // import { syncHistoryWithStore } from 'react-router-redux';
 // import { useScroll } from 'react-router-scroll';
@@ -25,7 +26,6 @@ const noMatch = asyncComponent(() => import('../components/containers/no-match/n
 function mapStyles(styles) {
   return {
     transform: `translate(${styles.scale}%)`,
-    'overflow-x': 'hidden',
     position: 'absolute',
   };
 }

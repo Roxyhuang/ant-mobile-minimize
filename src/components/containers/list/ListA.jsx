@@ -1,5 +1,5 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
+// import CSSModules from 'react-css-modules';
 import s from './list.less';
 // import backend from '../../../backend/Backend';
 import test from '../../../backend/test';
@@ -31,4 +31,4 @@ class ListA extends React.Component {
   }
 }
 
-export default CSSModules(ListA, s);
+export default ListA;
