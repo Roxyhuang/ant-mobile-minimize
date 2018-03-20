@@ -139,8 +139,8 @@ const webpackConfig = {
     // fs:'{}',
     // tls:'{}',
     // net:'{}'
-    'react': 'React',
-    'react-dom': 'ReactDOM',
+    // 'react': 'React',
+    // 'react-dom': 'ReactDOM',
   },
 };
 

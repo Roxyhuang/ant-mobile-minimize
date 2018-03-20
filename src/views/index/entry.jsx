@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import 'assets/css/global.less';
 import { Provider } from 'react-redux';

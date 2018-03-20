@@ -15,7 +15,7 @@ Layout.defaultProps = {
   backgroundColor: '#f2f2f2',
 };
 
-Layout.PropTypes = {
+Layout.propTypes = {
   className: PropTypes.string,
   backgroundColor: PropTypes.string,
 };
