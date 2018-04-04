@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 import * as homeActions from '../../../core/actions/homeActions';
 import s from './list.less';
 
-
 const mapStateToProps = (state) => {
   const { home } = state.state;
   return {
@@ -20,6 +19,8 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(
     { ...homeActions }, dispatch),
 });
+
+@connect(mapStateToProps, mapDispatchToProps)
 
 class ListB extends React.Component {
   constructor(props) {
@@ -70,4 +71,4 @@ class ListB extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListB);
+export default ListB;
