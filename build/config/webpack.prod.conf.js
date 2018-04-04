@@ -179,6 +179,7 @@ Object.keys(APP_ENTRY_POINT).forEach(name => {
         removeAttributeQuotes: true
       },
       chunks: [`assets/js/${name}`, 'vendors', ...chunks],
+      staticPath: `${PUBLIC_PATH}/assets`
     }),
     new ExtractTextPlugin({
       filename: 'assets/css/global.[chunkhash].css',

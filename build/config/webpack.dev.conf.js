@@ -12,7 +12,7 @@ import webpackConfig from './webpack.base.conf';
 let PUBLIC_PATH;
 
 if (process.env.NODE_ENV === 'development') {
-  PUBLIC_PATH = ''
+  PUBLIC_PATH = '';
 } else {
   PUBLIC_PATH = config.get('publicPath');
 }
@@ -157,6 +157,7 @@ Object.keys(APP_ENTRY_POINT).forEach((name,index)=> {
       template: TEMPLATE_PAGE,
       inject: 'body',
       chunks: [`assets/js/${name}`, 'vendors', ...chunks],
+      staticPath: './assets'
     }),
   );
 });
