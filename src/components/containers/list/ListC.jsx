@@ -17,11 +17,11 @@ class ListC extends React.Component {
   render() {
     return (
       <div>
-        <div className={s.listC}>C</div>
+        <div styleName="listA listB listC">C</div>
       </div>
 
     );
   }
 }
 
-export default CSSModules(ListC, s);
+export default CSSModules(ListC, s, { allowMultiple: true });
